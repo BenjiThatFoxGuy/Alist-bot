@@ -34,12 +34,12 @@ jobs:
           |
           docker buildx build --platform linux/amd64 . \
           --file Dockerfile \
-          --tag ghcr.io/benjithatfoxguy/alist-bot:latest \
+          --tag ghcr.io/benjithatfoxguy/alist-bot:latest-amd64 \
           --push
 
       - name: Build the Docker image (arm64)
         run: |
           docker buildx build --platform linux/arm64 . \
             --file Dockerfile \
-            --tag ghcr.io/benjithatfoxguy/alist-bot:latest \
+            --tag ghcr.io/benjithatfoxguy/alist-bot:latest-arm64 \
             --push
