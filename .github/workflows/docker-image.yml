@@ -29,17 +29,9 @@ jobs:
       - uses: docker/setup-qemu-action@v2
       - uses: docker/setup-buildx-action@v2
 
-      - name: Build the Docker image
-        run:
-          |
-          docker buildx build --platform linux/amd64 . \
-          --file Dockerfile \
-          --tag ghcr.io/benjithatfoxguy/alist-bot:latest-amd64 \
-          --push
-
       - name: Build the Docker image (arm64)
         run: |
           docker buildx build --platform linux/arm64 . \
             --file Dockerfile \
-            --tag ghcr.io/benjithatfoxguy/alist-bot:latest-arm64 \
+            --tag ghcr.io/benjithatfoxguy/alist-bot:latest \
             --push
